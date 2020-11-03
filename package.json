@@ -1,7 +1,7 @@
 {
   "name": "client",
   "version": "0.1.0",
-  "homepage": "http://tuanhadev.github.io/mern-giphy-client",
+  "homepage": "https://tuanhadev.github.io/mern-giphy-client",
   "private": true,
   "dependencies": {
     "antd": "^4.4.2",
