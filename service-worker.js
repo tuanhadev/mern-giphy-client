@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/mern-giphy-client/precache-manifest.5848335f9432ec847f84626efbbf4449.js"
+  "/mern-giphy-client/precache-manifest.3de86f74d72dea61f48c17eee5aee53d.js"
 );
 
 workbox.clientsClaim();

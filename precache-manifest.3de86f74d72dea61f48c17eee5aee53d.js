@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/mern-giphy-client/static/js/runtime~main.ade9dff4.js"
   },
   {
-    "revision": "54d53eeb3e2ea26eeafce8da70af70e0",
+    "revision": "929e9d8e08da265118cebaea6c4dc229",
     "url": "/mern-giphy-client/index.html"
   }
 ];
