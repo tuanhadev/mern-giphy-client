@@ -9,7 +9,7 @@ import { GET_ERRORS, SET_CURRENT_USER, USER_LOADING } from "./types";
 // Register User
 export const registerUser = (userData, newUserRocketChat, history) => dispatch => {
   axios
-    .post("/api/users/register", userData)
+    .post(`${config.domain}/api/users/register`, userData)
     .then(registerAccRocketChat(newUserRocketChat))
     .then(res => history.push("/login"))
     .catch(err =>
@@ -36,7 +36,7 @@ export const registerAccRocketChat = (userData) => (dispatch) => {
 // Login - get user token
 export const loginUser = userData => dispatch => {
   axios
-    .post("/api/users/login", userData)
+    .post(`${config.domain}/api/users/login`, userData)
     .then(res => {
       // Save to localStorage
 
