@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "f7953e0875b3226f850e",
+    "revision": "4cfa7d9edd9aca77e2d8",
     "url": "/mern-giphy-client/static/css/main.0067b301.chunk.css"
   },
   {
-    "revision": "f7953e0875b3226f850e",
-    "url": "/mern-giphy-client/static/js/main.f7953e08.chunk.js"
+    "revision": "4cfa7d9edd9aca77e2d8",
+    "url": "/mern-giphy-client/static/js/main.4cfa7d9e.chunk.js"
   },
   {
     "revision": "fbf790865e8f091f063b",
@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/mern-giphy-client/static/js/runtime~main.ade9dff4.js"
   },
   {
-    "revision": "25c32c5d8ea66f76bd71aa1092b780a6",
+    "revision": "54d53eeb3e2ea26eeafce8da70af70e0",
     "url": "/mern-giphy-client/index.html"
   }
 ];
