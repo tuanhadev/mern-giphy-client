@@ -27,8 +27,8 @@ export const registerAccRocketChat = (userData) => (dispatch) => {
     url: `${config.domainRocketChat}/api/v1/users.create`,
     data: userData,
     headers: {
-      'X-Auth-Token': `hH0P-d5tD2NBvf4BPacDy6aAIcFwkugtrwppQm4pOU3`,
-      'X-User-Id': `LiJ4sKSWPqMXxCX27`
+      'X-Auth-Token': `vDYyJjbxc3uKVbU-0Ig-WWpU2F6YGpRAveEjqIcerjF`,
+      'X-User-Id': `53kAydRm5oJK27nPs`
     }
   })
 };
