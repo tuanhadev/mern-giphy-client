@@ -1,3 +1,4 @@
+import axios from "axios";
 import config from "../config";
 import requestManager from "./requestManager";
 
@@ -8,6 +9,41 @@ export default class StatisticsService {
 			{}
 		)
 		return response;
+	}
+
+	static async getListUserRocketChat() {
+		const response = await axios({
+			method: 'GET',
+			url: `${config.domainRocketChat}/api/v1/users.list`,
+			data: {},
+			headers: {
+				'X-Auth-Token': `vDYyJjbxc3uKVbU-0Ig-WWpU2F6YGpRAveEjqIcerjF`,
+				'X-User-Id': `53kAydRm5oJK27nPs`
+			}
+		})
+		return response.data;
+	}
+
+	static async createUserRocketChat(userData) {
+		const response = axios({
+			method: 'POST',
+			url: `${config.domainRocketChat}/api/v1/users.create`,
+			data: userData,
+			headers: {
+				'X-Auth-Token': `vDYyJjbxc3uKVbU-0Ig-WWpU2F6YGpRAveEjqIcerjF`,
+				'X-User-Id': `53kAydRm5oJK27nPs`
+			}
+		})
+		return response.data;
+	}
+
+	static async checkLoginUser(userData) {
+		const response = await axios({
+			method: 'POST',
+			url: `${config.domain}/api/users/login`,
+			data: userData
+		})
+		return response.data;
 	}
 
 	static async getFavoriteGiphy(favorites) {

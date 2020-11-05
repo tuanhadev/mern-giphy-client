@@ -3,15 +3,16 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { logoutUser } from "../../actions/authActions";
+import { logoutUser, loginUser } from "../../actions/authActions";
 import GiphyService from "../../services/giphy";
 import config from "../../config/index";
 
-import { Layout, Menu, Dropdown, Button, Avatar, Spin, Row, Col, Card, message } from 'antd';
+import { Layout, Menu, Dropdown, Button, Avatar, Spin, Row, Col, Card, message, Modal, Form, Input, Typography } from 'antd';
 import { PlusOutlined, LogoutOutlined } from '@ant-design/icons';
 const { Meta } = Card;
 
 const { Header, Content, Footer } = Layout;
+const { Text } = Typography;
 const topColResponsiveProps = {
   xs: 24,
   sm: 12,
@@ -29,6 +30,7 @@ class FavoriteGiphy extends Component {
     super(props);
     this.state = {
       giphys: [],
+      visible: false,
       loading: true
     }
   }
@@ -72,9 +74,69 @@ class FavoriteGiphy extends Component {
     this.props.logoutUser();
   };
 
+  handleCancelLogout = () => {
+    this.setState({
+      visible: false,
+    });
+  };
+
+  handleChange = name => event => {
+    this.setState({
+      [name]: event.target.value
+    })
+  }
+
+  handleOk = async () => {
+    const { username, email, name } = this.props.auth.user;
+    const { password } = this.state;
+    this.setState({ loadingCheckUserExist: true });
+    const userData = {
+      email,
+      password
+    };
+    const userDataCreateRocket = {
+      email,
+      password,
+      name,
+      username
+    }
+
+    try {
+      const response = await GiphyService.checkLoginUser(userData);
+      if (response.success) {
+        await GiphyService.createUserRocketChat(userDataCreateRocket);
+        this.setState({ loadingCheckUserExist: false, visible: false }, () => {
+          window.open(`${config.domainRocketChat}`, '_blank')
+        })
+      } else {
+        message.error('Có lỗi xảy ra');
+        this.setState({ loadingCheckUserExist: false, visible: false })
+      }
+    } catch (error) {
+      console.log(error);
+      message.error('Có lỗi xảy ra');
+      this.setState({ loadingCheckUserExist: false, visible: false })
+    }
+  };
+
+  openChatApp = async () => {
+    try {
+      const { user } = this.props.auth;
+      const response = await GiphyService.getListUserRocketChat();
+      const accRocketChat = response.users.find(item => item.username === user.username);
+      if (!accRocketChat) {
+        this.setState({ visible: true });
+      } else {
+        window.open(`${config.domainRocketChat}`, '_blank')
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   render() {
     const { user } = this.props.auth;
-    const { giphys, loading } = this.state;
+    const { giphys, loading, visible, loadingCheckUserExist } = this.state;
     return (
       <Layout className="layout">
         <Header className="site-layout-background" style={{ "background": "white" }}>
@@ -85,7 +147,7 @@ class FavoriteGiphy extends Component {
             <Menu.Item className="d-flex align-items-center">
               <Link to="/favorite"><span>Danh sách yêu thích</span></Link>
             </Menu.Item>
-            <Menu.Item className="d-flex align-items-center" onClick={() => { window.open(`${config.domainRocketChat}`, '_blank') }}>
+            <Menu.Item className="d-flex align-items-center" onClick={this.openChatApp}>
               <span>Chat</span>
             </Menu.Item>
             <Menu.Item className="d-flex align-items-center" onClick={this.onLogoutClick}>
@@ -138,12 +200,35 @@ class FavoriteGiphy extends Component {
           </div>
         </Content>
         <Footer style={{ textAlign: 'center' }}>MERN-GIPHY Created by Trần Văn Tuấn</Footer>
+        <Modal
+          title="Nhập mật khẩu"
+          visible={visible}
+          onOk={this.handleOk}
+          onCancel={this.handleCancelLogout}
+          footer={[
+            <Button key="back" onClick={this.handleCancelLogout}>
+              Hủy
+            </Button>,
+            <Button key="submit" type="primary" loading={loadingCheckUserExist} onClick={this.handleOk}>
+              Xác nhận
+            </Button>,
+          ]}
+        >
+          <Form name="nest-messages">
+            <Form.Item
+              label={<span>Mật khẩu (<Text type="danger">*</Text>)</span>}
+            >
+              <Input.Password onChange={this.handleChange("password")} />
+            </Form.Item>
+          </Form>
+        </Modal>
       </Layout>
     );
   }
 }
 
 FavoriteGiphy.propTypes = {
+  loginUser: PropTypes.func.isRequired,
   logoutUser: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired
 };
@@ -154,5 +239,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { logoutUser }
+  { logoutUser, loginUser }
 )(FavoriteGiphy);
