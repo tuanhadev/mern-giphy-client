@@ -17,8 +17,8 @@ export default class StatisticsService {
 			url: `${config.domainRocketChat}/api/v1/users.list`,
 			data: {},
 			headers: {
-				'X-Auth-Token': `vDYyJjbxc3uKVbU-0Ig-WWpU2F6YGpRAveEjqIcerjF`,
-				'X-User-Id': `53kAydRm5oJK27nPs`
+				'X-Auth-Token': config.authTokenRocketChat,
+				'X-User-Id': config.userIdRocketChat
 			}
 		})
 		return response.data;
@@ -30,8 +30,8 @@ export default class StatisticsService {
 			url: `${config.domainRocketChat}/api/v1/users.create`,
 			data: userData,
 			headers: {
-				'X-Auth-Token': `vDYyJjbxc3uKVbU-0Ig-WWpU2F6YGpRAveEjqIcerjF`,
-				'X-User-Id': `53kAydRm5oJK27nPs`
+				'X-Auth-Token': config.authTokenRocketChat,
+				'X-User-Id': config.userIdRocketChat
 			}
 		})
 		return response.data;

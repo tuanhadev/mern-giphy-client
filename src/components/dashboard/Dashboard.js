@@ -87,7 +87,7 @@ class FavoriteGiphy extends Component {
   }
 
   handleOk = async () => {
-    const { username, email, name } = this.props.auth.user;
+    const { username, email, name, role, twitter } = this.props.auth.user;
     const { password } = this.state;
     this.setState({ loadingCheckUserExist: true });
     const userData = {
@@ -98,7 +98,11 @@ class FavoriteGiphy extends Component {
       email,
       password,
       name,
-      username
+      username,
+      customFields: {
+        role: role ? role : "student",
+        twitter: twitter ? twitter : "example"
+      }
     }
 
     try {

@@ -44,6 +44,8 @@ class Register extends Component {
 
     const newUser = {
       name: this.state.name,
+      role: "student",
+      twitter: "example",
       username: this.state.username,
       email: this.state.email,
       password: this.state.password,
@@ -52,6 +54,10 @@ class Register extends Component {
 
     const newUserRocketChat = {
       name: this.state.name,
+      customFields: {
+        role: "student",
+        twitter: "example"
+      },
       username: this.state.username,
       email: this.state.email,
       password: this.state.password
