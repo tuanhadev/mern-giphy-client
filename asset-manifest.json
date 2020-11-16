@@ -1,15 +1,15 @@
 {
   "main.css": "/mern-giphy-client/static/css/main.c0f43efb.chunk.css",
-  "main.js": "/mern-giphy-client/static/js/main.a1a2a99f.chunk.js",
-  "main.js.map": "/mern-giphy-client/static/js/main.a1a2a99f.chunk.js.map",
+  "main.js": "/mern-giphy-client/static/js/main.8c7141f9.chunk.js",
+  "main.js.map": "/mern-giphy-client/static/js/main.8c7141f9.chunk.js.map",
   "static/css/1.27c9bce2.chunk.css": "/mern-giphy-client/static/css/1.27c9bce2.chunk.css",
-  "static/js/1.4afb3cbc.chunk.js": "/mern-giphy-client/static/js/1.4afb3cbc.chunk.js",
-  "static/js/1.4afb3cbc.chunk.js.map": "/mern-giphy-client/static/js/1.4afb3cbc.chunk.js.map",
+  "static/js/1.489a4dc5.chunk.js": "/mern-giphy-client/static/js/1.489a4dc5.chunk.js",
+  "static/js/1.489a4dc5.chunk.js.map": "/mern-giphy-client/static/js/1.489a4dc5.chunk.js.map",
   "runtime~main.js": "/mern-giphy-client/static/js/runtime~main.ade9dff4.js",
   "runtime~main.js.map": "/mern-giphy-client/static/js/runtime~main.ade9dff4.js.map",
   "static/css/main.c0f43efb.chunk.css.map": "/mern-giphy-client/static/css/main.c0f43efb.chunk.css.map",
   "static/css/1.27c9bce2.chunk.css.map": "/mern-giphy-client/static/css/1.27c9bce2.chunk.css.map",
   "index.html": "/mern-giphy-client/index.html",
-  "precache-manifest.9f1d27b51d3683f0a2759648898a4ccc.js": "/mern-giphy-client/precache-manifest.9f1d27b51d3683f0a2759648898a4ccc.js",
+  "precache-manifest.c8ea69cefba86e3e1de42c799a2fe261.js": "/mern-giphy-client/precache-manifest.c8ea69cefba86e3e1de42c799a2fe261.js",
   "service-worker.js": "/mern-giphy-client/service-worker.js"
 }
