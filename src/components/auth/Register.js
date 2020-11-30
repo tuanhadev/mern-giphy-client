@@ -16,6 +16,8 @@ class Register extends Component {
       email: "",
       password: "",
       password2: "",
+      roomName: "",
+      nameClass: "",
       errors: {}
     };
   }
@@ -44,8 +46,8 @@ class Register extends Component {
 
     const newUser = {
       name: this.state.name,
-      role: "student",
-      twitter: "example",
+      roomName: "example",
+      nameClass: "example",
       username: this.state.username,
       email: this.state.email,
       password: this.state.password,
@@ -55,8 +57,8 @@ class Register extends Component {
     const newUserRocketChat = {
       name: this.state.name,
       customFields: {
-        role: "student",
-        twitter: "example"
+        roomName: "example",
+        nameClass: "example"
       },
       username: this.state.username,
       email: this.state.email,
@@ -163,6 +165,24 @@ class Register extends Component {
                   />
                   <label htmlFor="password2">Confirm Password</label>
                   <span className="red-text">{errors.password2}</span>
+                </div>
+                <div className="input-field col s12">
+                  <input
+                    onChange={this.onChange}
+                    value={this.state.roomName}
+                    id="roomName"
+                    type="text"
+                  />
+                  <label htmlFor="roomName">Room</label>
+                </div>
+                <div className="input-field col s12">
+                  <input
+                    onChange={this.onChange}
+                    value={this.state.nameClass}
+                    id="nameClass"
+                    type="text"
+                  />
+                  <label htmlFor="nameClass">Class</label>
                 </div>
                 <div className="col s12" style={{ paddingLeft: "11.250px" }}>
                   <button
