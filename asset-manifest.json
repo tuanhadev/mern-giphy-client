@@ -1,7 +1,7 @@
 {
   "main.css": "/mern-giphy-client/static/css/main.c0f43efb.chunk.css",
-  "main.js": "/mern-giphy-client/static/js/main.29b37eb7.chunk.js",
-  "main.js.map": "/mern-giphy-client/static/js/main.29b37eb7.chunk.js.map",
+  "main.js": "/mern-giphy-client/static/js/main.4fc49c7d.chunk.js",
+  "main.js.map": "/mern-giphy-client/static/js/main.4fc49c7d.chunk.js.map",
   "static/css/1.27c9bce2.chunk.css": "/mern-giphy-client/static/css/1.27c9bce2.chunk.css",
   "static/js/1.489a4dc5.chunk.js": "/mern-giphy-client/static/js/1.489a4dc5.chunk.js",
   "static/js/1.489a4dc5.chunk.js.map": "/mern-giphy-client/static/js/1.489a4dc5.chunk.js.map",
@@ -10,6 +10,6 @@
   "static/css/1.27c9bce2.chunk.css.map": "/mern-giphy-client/static/css/1.27c9bce2.chunk.css.map",
   "static/css/main.c0f43efb.chunk.css.map": "/mern-giphy-client/static/css/main.c0f43efb.chunk.css.map",
   "index.html": "/mern-giphy-client/index.html",
-  "precache-manifest.4d461544e4901e641da9646f205f6d0a.js": "/mern-giphy-client/precache-manifest.4d461544e4901e641da9646f205f6d0a.js",
+  "precache-manifest.d745f4e71b5d85ebb1c4aec5eb26d3dd.js": "/mern-giphy-client/precache-manifest.d745f4e71b5d85ebb1c4aec5eb26d3dd.js",
   "service-worker.js": "/mern-giphy-client/service-worker.js"
 }
